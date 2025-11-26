@@ -5,6 +5,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <h1>View Transition Highlight</h1>
     <button id="shuffle-button">Shuffle Cards</button>
+    <a href="https://github.com/riceball-tw/view-transition-highlight">GitHub</a>
     <div class="grid-container" id="demo-container">
       <div class="card">
         <h3><span class="card-icon">✨</span> Interactive</h3>
