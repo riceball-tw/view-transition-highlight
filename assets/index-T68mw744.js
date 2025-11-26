@@ -2,6 +2,7 @@
   <div>
     <h1>View Transition Highlight</h1>
     <button id="shuffle-button">Shuffle Cards</button>
+    <a href="https://github.com/riceball-tw/view-transition-highlight">GitHub</a>
     <div class="grid-container" id="demo-container">
       <div class="card">
         <h3><span class="card-icon">✨</span> Interactive</h3>
@@ -29,4 +30,4 @@
       </div>
     </div>
   </div>
-`;const l=document.documentElement;let a=240;setInterval(()=>{a=(a+1)%360;const n=`hsl(${a}, 100%, 60%)`;l.style.setProperty("--primary",n),l.style.setProperty("--highlight-border",n)},10);const d=document.getElementById("demo-container"),c=Array.from(d.querySelectorAll(".card")),p=document.getElementById("shuffle-button"),h=new u;h.setTarget(c[0]);c.forEach(n=>{n.addEventListener("click",()=>{h.setTarget(n)})});p?.addEventListener("click",()=>{function n(r){for(let i=r.length-1;i>0;i--){const e=Math.floor(Math.random()*(i+1));[r[i],r[e]]=[r[e],r[i]]}return r}const t=()=>{n([...c]).forEach(i=>{d.appendChild(i),Math.random()>.7?i.classList.add("expanded"):i.classList.remove("expanded")})};document.startViewTransition?document.startViewTransition(t):t()});
+`;const l=document.documentElement;let a=240;setInterval(()=>{a=(a+1)%360;const n=`hsl(${a}, 100%, 60%)`;l.style.setProperty("--primary",n),l.style.setProperty("--highlight-border",n)},10);const h=document.getElementById("demo-container"),c=Array.from(h.querySelectorAll(".card")),p=document.getElementById("shuffle-button"),d=new u;d.setTarget(c[0]);c.forEach(n=>{n.addEventListener("click",()=>{d.setTarget(n)})});p?.addEventListener("click",()=>{function n(r){for(let i=r.length-1;i>0;i--){const e=Math.floor(Math.random()*(i+1));[r[i],r[e]]=[r[e],r[i]]}return r}const t=()=>{n([...c]).forEach(i=>{h.appendChild(i),Math.random()>.7?i.classList.add("expanded"):i.classList.remove("expanded")})};document.startViewTransition?document.startViewTransition(t):t()});
