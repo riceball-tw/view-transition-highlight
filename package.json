@@ -1,6 +1,6 @@
 {
   "name": "view-transition-highlight",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/view-transition-highlight.umd.cjs",
   "module": "./dist/view-transition-highlight.js",
@@ -27,5 +27,8 @@
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vite-plugin-dts": "^4.5.4"
+  },
+  "dependencies": {
+    "view-transition-highlight": "^0.0.1"
   }
 }
