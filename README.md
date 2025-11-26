@@ -1,4 +1,4 @@
-# Dynamic Highlight
+# View Transition Highlight
 
 A lightweight, framework-agnostic TypeScript utility that creates smooth, high-performance active state highlights using the modern **View Transitions API**.
 
@@ -14,7 +14,7 @@ Animating a "highlight" or "active" indicator between different DOM elements is 
 
 ## 💡 The Solution
 
-**Dynamic Highlight** solves these problems by leveraging the native **View Transitions API**.
+**View Transition Highlight** solves these problems by leveraging the native **View Transitions API**.
 
 Instead of manually calculating positions and animating pixels, this utility simply moves a highlighting DOM element from one parent to another. The browser's View Transition mechanism handles the magic: it takes a snapshot of the old state and the new state, and automatically interpolates the position and size of the highlighter element smoothly (at 60fps).
 
@@ -24,19 +24,31 @@ Instead of manually calculating positions and animating pixels, this utility sim
 *   **Framework Agnostic**: Works with React, Vue, Svelte, Vanilla JS, etc.
 *   **Responsive**: Automatically adapts if the target element changes size (as seen in the "Shuffle" demo).
 
+## 📦 Installation
+
+You can install this package via npm or pnpm:
+
+```bash
+npm install view-transition-highlight
+# or
+pnpm add view-transition-highlight
+```
+
 ## 🛠️ Usage
 
-### 1. Setup
+### 1. Import
 
-Ensure you have the `Highlighter` class in your project (e.g., copied to `src/utils/Highlighter.ts`).
+Import the `Highlighter` class into your project:
+
+```typescript
+import { Highlighter } from 'view-transition-highlight';
+```
 
 ### 2. Initialize
 
 Create an instance of the highlighter.
 
 ```typescript
-import { Highlighter } from './utils/Highlighter';
-
 const highlighter = new Highlighter();
 ```
 
@@ -45,7 +57,7 @@ const highlighter = new Highlighter();
 The highlighter creates a `div` with the class `highlight`. You must style this class to define how your highlighter looks.
 
 ```css
-/* style.css */
+/* Your project's CSS */
 .highlight {
   position: absolute;
   inset: 0; /* Fills the target element */
@@ -60,6 +72,12 @@ The highlighter creates a `div` with the class `highlight`. You must style this 
    * This tells the browser to track this specific element during transitions.
    */
   view-transition-name: highlighter;
+}
+
+/* Optional: Customize animation timing */
+::view-transition-group(highlighter) {
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.34,1.56,0.64,1);
 }
 ```
 
@@ -78,9 +96,9 @@ items.forEach(item => {
 });
 ```
 
-## 📦 Installation & Running the Demo
+## 🚀 Running the Demo
 
-This project uses **Vite** and **pnpm**.
+This project uses **Vite** and **pnpm** for the demo.
 
 1.  **Install dependencies:**
     ```bash
